@@ -13,6 +13,9 @@ class Queue(object):
         self.tail = None
         self.length = 0
 
+    def __len__(self):
+        return self.length
+
     def enqueue(self, item):
         n = QueueNode(item)
         if self.length == 0:
@@ -33,7 +36,7 @@ class Queue(object):
 
     def peek(self):
         if self.length == 0:
-            raise IndexError
+            return None
 
         return self.head.value
 
